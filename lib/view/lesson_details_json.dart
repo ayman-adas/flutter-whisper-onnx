@@ -56,12 +56,7 @@ class _LessonDetailsJsonState extends State<LessonDetailsJsonView> {
                     body: Container(
                         padding: EdgeInsets.all(0),
                         margin: EdgeInsets.zero,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                  'assets/images/lesson_json.png',
-                                ),
-                                fit: BoxFit.fill)),
+                        
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
