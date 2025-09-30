@@ -9,6 +9,6 @@ void main() async {
 
   await loadDylib();
   runApp(BlocProvider(
-      create: (context) => DeepRecognizerCubit(),
+      create: (context) => VaporRecognizerCubit(),
       child: const LessonDetailsJsonView(name: '', filePath: '')));
 }

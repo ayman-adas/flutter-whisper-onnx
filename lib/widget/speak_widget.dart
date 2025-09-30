@@ -29,8 +29,8 @@ class _SpeakWidgetState extends State<SpeakWidget>
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<DeepRecognizerCubit, DeepRecognizerStates>(
-      listener: (BuildContext context, DeepRecognizerStates state) {
+    return BlocConsumer<VaporRecognizerCubit, VaporRecognizerStates>(
+      listener: (BuildContext context, VaporRecognizerStates state) {
         // if (state is DeepRecognizerOnTranscriptionResultState) {
         //   widget.nResult = state.transcript ?? '';
         //   if (widget.nResult.isNotEmpty &&
@@ -51,7 +51,7 @@ class _SpeakWidgetState extends State<SpeakWidget>
         //   }
         // } else if (state is DeepRecognizerOnErrorRecognitionState) {}
       },
-      builder: (BuildContext context, DeepRecognizerStates state) {
+      builder: (BuildContext context, VaporRecognizerStates state) {
         return widget.isLoading?Center(child: CircularProgressIndicator()): Padding(
           padding: const EdgeInsets.symmetric(vertical: 14.0),
           child: SizedBox(

@@ -32,9 +32,9 @@ class _LessonDetailJsonCardState extends State<LessonDetailJsonCard> {
     String feedback = '';
     MaterialColor color = Colors.amber;
 
-    return BlocConsumer<DeepRecognizerCubit, DeepRecognizerStates>(
-        listener: (BuildContext context, DeepRecognizerStates state) {
-          if (state is DeepRecognizerOnTranscriptionResultState) {
+    return BlocConsumer<VaporRecognizerCubit, VaporRecognizerStates>(
+        listener: (BuildContext context, VaporRecognizerStates state) {
+          if (state is VaporRecognizerOnResultState) {
             nResult = state.transcript ?? '';
             String cleanText(String text) =>
                 text.replaceAll('[UNK]', '').toLowerCase().trim().replaceAll(
@@ -74,7 +74,7 @@ class _LessonDetailJsonCardState extends State<LessonDetailJsonCard> {
                 percent = 95;
               }
             }
-          } else if (state is DeepRecognizerOnErrorRecognitionState) {}
+          } else if (state is VaporRecognizerOnErrorRecognitionState) {}
         },
         builder: (context, state) => SizedBox(
           child: Column(
@@ -130,7 +130,7 @@ class _LessonDetailJsonCardState extends State<LessonDetailJsonCard> {
               ),
               Visibility(
                 visible:
-                    state is DeepRecognizerOnTranscriptionResultState &&
+                    state is VaporRecognizerOnResultState &&
                         nResult != '',
                 child: Column(
                   children: [
